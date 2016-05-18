@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block titulo %}
+	Listagem de Fóruns
+{% endblock %}
+
+{% block content %}
+
+{% for foruns in foruns %}
+<article class="row">
+<div class="columns large-12">
+	<hr>
+	<h3>{{foruns.topico}}</h3>
+	<p>{{ foruns.descricao }}</p>
+	<a href="{% url 'lermensagens' id=foruns.id %}"> Ler Mensagens </a>
+</div>
+</article>
+{% endfor %}
+
+{% endblock content %}

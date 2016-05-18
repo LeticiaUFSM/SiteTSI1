@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block titulo %}
+	Listagem de Mensagens do Fórum
+{% endblock %}
+
+{% block content %}
+<br><br><br>
+<article class="row">
+<div class="columns large-10">
+	<h3>{{forum.topico}}</h3>
+	<p>{{forum.descricao}}</p>
+	<p></p>
+</div>
+<div class="columns large-2">
+	<a href="{% url 'escrevermensagem' id=forum.id %}" class="button"> Escrever Mensagem </a>
+</div>
+</article>
+<div class="row">
+	<div class="columns large-2">
+	</div>
+	<div class="columns large-10">
+	{% for mensagens in mensagens %}
+	   	<p>{{mensagens.nome}}</p>
+	   	<p>{{mensagens.email}}</p>
+	   	<p>{{mensagens.mensagem}}</p>
+	   	<p>{{mensagens.data}}</p>
+	   	<a href="{% url 'editarmensagem' id=forum.id msg_id=mensagens.id %}" class="button"> Editar Mensagem </a>
+	   	<p><hr></p>
+  	{% endfor %}
+	</div>
+</div>
+
+
+{% endblock content %}

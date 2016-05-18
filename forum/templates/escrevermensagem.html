@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block titulo %}
+	Listagem de Fóruns
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+<div class="columns large-12">
+	<p>
+                    Meu Formulário
+                </p>
+                <form method="post" action="">
+                    {% csrf_token %}
+                    {{ form }}
+                    <input type="submit" />
+                </form>
+</div>
+</div>
+
+
+{% endblock content %}

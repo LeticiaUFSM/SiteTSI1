@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block titulo %}
+	Listagem de noticias
+{% endblock %}
+
+{% block content %}
+
+<article class="row">
+<div class="columns large-12">
+	<h3>{{noticia.titulo}}</h3>
+	<hr>
+	<p>{{noticia.data}}</p>
+	<p>{{noticia.texto}}</p>
+</div>
+</article>
+<div class="row">
+	<div class="columns large-12">
+	<ul class="clearing-thumbs small-block-grid-4" data-clearing>
+	{% for imagens in imagens %}
+	   	<li><a class="th" href="../media/{{ imagens.foto }}">
+	   	<img data-caption="{{ imagens.legenda }}" src="../media/{{ imagens.foto }}">
+	   	</a></li>
+  	{% endfor %}
+	</ul>
+	</div>
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block titulo %}
+	Listagem de noticias
+{% endblock %}
+
+{% block content %}
+
+{% for noticias in noticias %}
+<article class="row">
+<div class="columns large-12">
+	<hr>
+	<h3>{{noticias.titulo}}</h3>
+	<a href="{% url 'lernoticia' id=noticias.id %}"> Ler notícia </a>
+</div>
+</article>
+{% endfor %}
+
+{% endblock content %}
