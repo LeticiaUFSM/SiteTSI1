@@ -87,9 +87,9 @@ DATABASES = {
     'default':{
         'ENGINE':'django.db.backends.mysql',
         'NAME': 'sitetsi2', #nome da base de dados
-        'USER': 'root', #usuário
-        'PASSWORD' : '', #SENHA
-        'HOST':'',#endereço do servidor, vazio para localhost
+        'USER': 'sitetsi', #usuário
+        'PASSWORD' : 'senha1234', #SENHA
+        'HOST':'sitetsi.mysql.pythonanywhere-services.com',#endereço do servidor, vazio para localhost
         'PORT':'', #porta de conexão, vazio para porta 3306 (padrão)
         }
     }
